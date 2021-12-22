@@ -1,0 +1,23 @@
+{
+  "name": "survivalguide",
+  "version": "1.0.0",
+  "description": "Survival guide by fireship.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/secretMeedo/SurvivalGuide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/secretMeedo/SurvivalGuide/issues"
+  },
+  "homepage": "https://github.com/secretMeedo/SurvivalGuide#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
