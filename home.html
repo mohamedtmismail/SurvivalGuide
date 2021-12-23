@@ -1,16 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+    
+    .header {
+      text-align: center;
+      padding: 32px;
+    }
+    
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    
+    /* Create four equal columns that sits next to each other */
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+    }
+    
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+    }
+    
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+    
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media (max-width: 600px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+    </style>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>I am a full stack web developer!!</h1>
-    <iframe
-      src="https://cdn.dribbble.com/users/113499/screenshots/7146093/space-cat.png"
-      frameborder="0"
-    ></iframe>
-  </body>
+
+    <!-- Header -->
+    <div class="header">
+      <h1>Responsive Image Gallery</h1>
+      <p>Resize the browser window to see the responsive effect.</p>
+    </div>
+    
+    <!-- Photo Grid -->
+    <div class="row"> 
+      <div class="column">
+        <img src="https://cdn.dribbble.com/users/113499/screenshots/7146093/space-cat.png" style="width:100%">
+        <img src="https://i.pinimg.com/originals/2e/a1/84/2ea184f6ff9e73d45b9d790cf9dc8afa.gif" style="width:100%">
+        <img src="https://i.pinimg.com/474x/0e/89/db/0e89dba85357a0b2ea1ff2c2bf16e02c.jpg" style="width:100%">
+        <img src="https://cdn.dribbble.com/users/1651609/screenshots/14770259/media/e6a5719823c86b42bfd49333133280b8.gif" style="width:100%">
+        <img src="https://i.pinimg.com/474x/a5/dc/37/a5dc371ee48da825cea1aeca3aa2f26d.jpg" style="width:100%">
+        <img src="https://i.imgur.com/Hx5T28J.jpg" style="width:100%">
+        <img src="https://cdn.dribbble.com/users/1651609/screenshots/14770259/media/e6a5719823c86b42bfd49333133280b8.gif" style="width:100%">
+      </div>
+      
+      <div class="column">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5818480c-5b5f-4ae5-8da2-6387f4c0b3ce/dctnu63-ba916393-e830-4971-a39a-83e4a42f7371.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU4MTg0ODBjLTViNWYtNGFlNS04ZGEyLTYzODdmNGMwYjNjZVwvZGN0bnU2My1iYTkxNjM5My1lODMwLTQ5NzEtYTM5YS04M2U0YTQyZjczNzEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.OCet-hzPm1GmjR_koHmnV8r3ZA9wtH-K6eh2KSOIz9o" style="width:100%">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/eef3cc5c-ba49-403a-b882-20a43a416c23/d6hjplj-c15d5d64-f893-4cad-8c41-b2106f0ec6d7.png/v1/fill/w_1000,h_800,strp/cat_spaceship_by_hoozuki_d6hjplj-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAwIiwicGF0aCI6IlwvZlwvZWVmM2NjNWMtYmE0OS00MDNhLWI4ODItMjBhNDNhNDE2YzIzXC9kNmhqcGxqLWMxNWQ1ZDY0LWY4OTMtNGNhZC04YzQxLWIyMTA2ZjBlYzZkNy5wbmciLCJ3aWR0aCI6Ijw9MTAwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ae_5hwv4wM3Cns1qP-TQJ4mH5oE3zr2BXgtbMjq7sJk" style="width:100%">
+        <img src="https://cdn.dribbble.com/users/113499/screenshots/7146093/space-cat.png" style="width:100%">
+        <img src="https://www.telegraph.co.uk/content/dam/art/2021/05/03/Space-Cat_trans_NvBQzQNjv4BqvqfDbYV_7XcRT56v9L25rAk82TRM0xi_N4x7ucCy1vw.png?imwidth=680" style="width:100%">
+        <img src="https://i.pinimg.com/originals/2e/a1/84/2ea184f6ff9e73d45b9d790cf9dc8afa.gif" style="width:100%">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5818480c-5b5f-4ae5-8da2-6387f4c0b3ce/dctnu63-ba916393-e830-4971-a39a-83e4a42f7371.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU4MTg0ODBjLTViNWYtNGFlNS04ZGEyLTYzODdmNGMwYjNjZVwvZGN0bnU2My1iYTkxNjM5My1lODMwLTQ5NzEtYTM5YS04M2U0YTQyZjczNzEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.OCet-hzPm1GmjR_koHmnV8r3ZA9wtH-K6eh2KSOIz9o" style="width:100%">
+        <img src="https://static.displate.com/857x1200/displate/2021-02-18/8d9c1c96c389f985ab120d8369271a1e_dbbd36449c622017ab218eac253ebf2f.jpg" style="width:100%">
+      </div> 
+       
+      <div class="column">
+        <img src="https://cdn.dribbble.com/users/113499/screenshots/7146093/space-cat.png" style="width:100%">
+        <img src="https://i.pinimg.com/originals/2e/a1/84/2ea184f6ff9e73d45b9d790cf9dc8afa.gif" style="width:100%">
+        <img src="https://i.pinimg.com/474x/0e/89/db/0e89dba85357a0b2ea1ff2c2bf16e02c.jpg" style="width:100%">
+        <img src="https://cdn.dribbble.com/users/1651609/screenshots/14770259/media/e6a5719823c86b42bfd49333133280b8.gif" style="width:100%">
+        <img src="https://i.pinimg.com/474x/a5/dc/37/a5dc371ee48da825cea1aeca3aa2f26d.jpg" style="width:100%">
+        <img src="https://i.imgur.com/Hx5T28J.jpg" style="width:100%">
+        <img src="https://cdn.dribbble.com/users/1651609/screenshots/14770259/media/e6a5719823c86b42bfd49333133280b8.gif" style="width:100%">
+      </div>
+      
+      <div class="column">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5818480c-5b5f-4ae5-8da2-6387f4c0b3ce/dctnu63-ba916393-e830-4971-a39a-83e4a42f7371.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU4MTg0ODBjLTViNWYtNGFlNS04ZGEyLTYzODdmNGMwYjNjZVwvZGN0bnU2My1iYTkxNjM5My1lODMwLTQ5NzEtYTM5YS04M2U0YTQyZjczNzEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.OCet-hzPm1GmjR_koHmnV8r3ZA9wtH-K6eh2KSOIz9o" style="width:100%">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/eef3cc5c-ba49-403a-b882-20a43a416c23/d6hjplj-c15d5d64-f893-4cad-8c41-b2106f0ec6d7.png/v1/fill/w_1000,h_800,strp/cat_spaceship_by_hoozuki_d6hjplj-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAwIiwicGF0aCI6IlwvZlwvZWVmM2NjNWMtYmE0OS00MDNhLWI4ODItMjBhNDNhNDE2YzIzXC9kNmhqcGxqLWMxNWQ1ZDY0LWY4OTMtNGNhZC04YzQxLWIyMTA2ZjBlYzZkNy5wbmciLCJ3aWR0aCI6Ijw9MTAwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ae_5hwv4wM3Cns1qP-TQJ4mH5oE3zr2BXgtbMjq7sJk" style="width:100%">
+        <img src="https://cdn.dribbble.com/users/113499/screenshots/7146093/space-cat.png" style="width:100%">
+        <img src="https://www.telegraph.co.uk/content/dam/art/2021/05/03/Space-Cat_trans_NvBQzQNjv4BqvqfDbYV_7XcRT56v9L25rAk82TRM0xi_N4x7ucCy1vw.png?imwidth=680" style="width:100%">
+        <img src="https://i.pinimg.com/originals/2e/a1/84/2ea184f6ff9e73d45b9d790cf9dc8afa.gif" style="width:100%">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5818480c-5b5f-4ae5-8da2-6387f4c0b3ce/dctnu63-ba916393-e830-4971-a39a-83e4a42f7371.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU4MTg0ODBjLTViNWYtNGFlNS04ZGEyLTYzODdmNGMwYjNjZVwvZGN0bnU2My1iYTkxNjM5My1lODMwLTQ5NzEtYTM5YS04M2U0YTQyZjczNzEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.OCet-hzPm1GmjR_koHmnV8r3ZA9wtH-K6eh2KSOIz9o" style="width:100%">
+        <img src="https://static.displate.com/857x1200/displate/2021-02-18/8d9c1c96c389f985ab120d8369271a1e_dbbd36449c622017ab218eac253ebf2f.jpg" style="width:100%">
+      </div>
+    </div>
+    
 </html>
